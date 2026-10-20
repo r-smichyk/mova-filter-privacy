@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Політика приватності – Мовний фільтр</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #1d2125;
+    --muted: #5c6670;
+    --accent: #0057b7;
+    --rule: #dde2e7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #14181c;
+      --text: #e6e9ec;
+      --muted: #9aa5b0;
+      --accent: #6aa8f0;
+      --rule: #2b333b;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14181c;
+    --text: #e6e9ec;
+    --muted: #9aa5b0;
+    --accent: #6aa8f0;
+    --rule: #2b333b;
+  }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 3rem 16px 4rem;
+  }
+  h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 .25rem; }
+  h2 { font-size: 1.15rem; margin: 2rem 0 .5rem; }
+  p, ul { margin: .5rem 0; }
+  ul { padding-left: 1.25rem; }
+  .meta { color: var(--muted); font-size: .9rem; }
+  .stripe {
+    height: 6px;
+    margin-bottom: 2rem;
+    background: linear-gradient(to bottom, #0057b7 50%, #ffd700 50%);
+    border-radius: 3px;
+  }
+  hr { border: 0; border-top: 1px solid var(--rule); margin: 3rem 0 2rem; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <div class="stripe"></div>
+
+  <h1>Політика приватності</h1>
+  <p class="meta">Розширення «Мовний фільтр» (Mova Filter) для Chrome. Оновлено 20 жовтня 2026.</p>
+
+  <h2>Коротко</h2>
+  <p>Розширення не збирає, не зберігає і нікуди не передає жодних даних про вас. Воно не має серверів, акаунтів, аналітики чи реклами.</p>
+
+  <h2>Що розширення робить</h2>
+  <ul>
+    <li><strong>Google.</strong> Коли ви відкриваєте пошук на <code>www.google.com</code>, Chrome за правилом розширення додає до адреси параметр <code>lr=lang_uk|lang_en</code>. Це відбувається всередині браузера, до того як запит піде в мережу. Розширення не читає й не зберігає ваші пошукові запити.</li>
+    <li><strong>YouTube.</strong> На сторінках <code>www.youtube.com</code> розширення читає назви й описи відео, що відображені на сторінці, і локально перевіряє, чи вони російською. Російські відео стають напівпрозорими. Тексти нікуди не надсилаються і не зберігаються.</li>
+  </ul>
+
+  <h2>Чого розширення не робить</h2>
+  <ul>
+    <li>Не збирає персональних даних, історії перегляду, пошукових запитів чи вмісту сторінок.</li>
+    <li>Не використовує cookies, локальне сховище чи інше постійне сховище.</li>
+    <li>Не робить мережевих запитів до власних чи сторонніх серверів.</li>
+    <li>Не завантажує і не виконує віддалений код.</li>
+    <li>Не продає і не передає дані третім особам.</li>
+  </ul>
+
+  <h2>Дозволи</h2>
+  <ul>
+    <li><code>declarativeNetRequestWithHostAccess</code> і доступ до <code>https://www.google.com/*</code>: лише щоб додати мовний параметр до адреси пошуку.</li>
+    <li>Скрипт на <code>https://www.youtube.com/*</code>: лише щоб локально перевірити мову назв відео на сторінці.</li>
+  </ul>
+
+  <h2>Зміни</h2>
+  <p>Якщо розширення колись почне працювати з даними інакше, ця сторінка буде оновлена до того, як з'явиться така версія.</p>
+
+  <h2>Питання</h2>
+  <p>Запитання про приватність можна залишити як issue в репозиторії цієї сторінки: <a href="https://github.com/r-smichyk/mova-filter-privacy/issues">github.com/r-smichyk/mova-filter-privacy</a>.</p>
+
+  <hr>
+
+  <section lang="en">
+    <h1>Privacy policy</h1>
+    <p class="meta">Mova Filter, a Chrome extension. Updated 20 October 2026.</p>
+
+    <p>The extension does not collect, store or transmit any data about you. It has no servers, accounts, analytics or ads.</p>
+    <ul>
+      <li><strong>Google:</strong> a declarative network rule adds <code>lr=lang_uk|lang_en</code> to Google search URLs inside the browser, before the request is sent. Search queries are not read or stored.</li>
+      <li><strong>YouTube:</strong> a content script reads the titles and descriptions of videos shown on the page and checks locally whether they are in Russian, then dims them. The text is not stored or sent anywhere.</li>
+      <li>No cookies, no local storage, no network requests of its own, no remote code, no third-party sharing.</li>
+    </ul>
+    <p>Questions: open an issue at <a href="https://github.com/r-smichyk/mova-filter-privacy/issues">github.com/r-smichyk/mova-filter-privacy</a>.</p>
+  </section>
+</main>
+</body>
+</html>
