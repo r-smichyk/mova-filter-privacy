@@ -66,7 +66,7 @@
 
   <h2>Що розширення робить</h2>
   <ul>
-    <li><strong>Google.</strong> Коли ви відкриваєте пошук на <code>www.google.com</code>, Chrome за правилом розширення додає до адреси параметр <code>lr=lang_uk|lang_en</code>. Це відбувається всередині браузера, до того як запит піде в мережу. Розширення не читає й не зберігає ваші пошукові запити.</li>
+    <li><strong>Google.</strong> Коли ви відкриваєте пошук на <code>www.google.com</code>, Chrome за правилом розширення додає до адреси параметр <code>lr=lang_uk|lang_en</code>. Це відбувається всередині браузера, до того як запит піде в мережу. Розширення не читає й не зберігає ваші пошукові запити. Крім цього, на сторінці результатів (<code>www.google.com/search</code>) воно читає назви та уривки знайдених результатів і локально перевіряє, чи вони російською. Якщо так, результат приховується. Тексти нікуди не надсилаються і не зберігаються.</li>
     <li><strong>YouTube.</strong> На сторінках <code>www.youtube.com</code> розширення читає назви й описи відео, що відображені на сторінці, і локально перевіряє, чи вони російською. Російські відео стають напівпрозорими. Тексти нікуди не надсилаються і не зберігаються.</li>
   </ul>
 
@@ -82,6 +82,7 @@
   <h2>Дозволи</h2>
   <ul>
     <li><code>declarativeNetRequestWithHostAccess</code> і доступ до <code>https://www.google.com/*</code>: лише щоб додати мовний параметр до адреси пошуку.</li>
+    <li>Скрипт на <code>https://www.google.com/search*</code>: лише щоб локально перевірити мову знайдених результатів на сторінці.</li>
     <li>Скрипт на <code>https://www.youtube.com/*</code>: лише щоб локально перевірити мову назв відео на сторінці.</li>
   </ul>
 
@@ -99,7 +100,7 @@
 
     <p>The extension does not collect, store or transmit any data about you. It has no servers, accounts, analytics or ads.</p>
     <ul>
-      <li><strong>Google:</strong> a declarative network rule adds <code>lr=lang_uk|lang_en</code> to Google search URLs inside the browser, before the request is sent. Search queries are not read or stored.</li>
+      <li><strong>Google:</strong> a declarative network rule adds <code>lr=lang_uk|lang_en</code> to Google search URLs inside the browser, before the request is sent. Search queries are not read or stored. In addition, a content script on the results page (<code>www.google.com/search</code>) reads the titles and snippets of the results shown and checks locally whether they are in Russian, then hides them. The text is not stored or sent anywhere.</li>
       <li><strong>YouTube:</strong> a content script reads the titles and descriptions of videos shown on the page and checks locally whether they are in Russian, then dims them. The text is not stored or sent anywhere.</li>
       <li>No cookies, no local storage, no network requests of its own, no remote code, no third-party sharing.</li>
     </ul>
